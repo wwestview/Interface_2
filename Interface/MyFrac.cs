@@ -46,6 +46,10 @@ namespace Interface
         {
             return new MyFrac(this.nom * that.nom, this.denom * that.denom);
         }
+        public override string ToString()
+        {
+            return $"{this.nom.ToString()}/{this.denom.ToString()}";
+        }
 
     }
 }

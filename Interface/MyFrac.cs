@@ -48,9 +48,16 @@ namespace Interface
         }
         public override string ToString()
         {
-            return $"{this.nom.ToString()}/{this.denom.ToString()}";
+         return $"{this.nom.ToString()}/{this.denom.ToString()}";
         }
-
+        // You may think that this is a duplication of code, and I agree, but for the user,
+        // it is a simplification of the use of methods.
+        /*
+        static public MyFrac operator +(MyFrac f1, MyFrac f2) { return f1.Add(f2); }
+        static public MyFrac operator -(MyFrac f1, MyFrac f2) { return f1.Subtract(f2); }
+        static public MyFrac operator *(MyFrac f1, MyFrac f2) { return f1.Multiply(f2); }
+        static public MyFrac operator /(MyFrac f1, MyFrac f2) { return f1.Divide(f2); }
+        */
     }
 }
    

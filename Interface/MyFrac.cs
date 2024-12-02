@@ -58,6 +58,13 @@ namespace Interface
         static public MyFrac operator *(MyFrac f1, MyFrac f2) { return f1.Multiply(f2); }
         static public MyFrac operator /(MyFrac f1, MyFrac f2) { return f1.Divide(f2); }
         */
+        public int CompareTo(MyFrac that)
+        {
+           BigInteger leftFrac = this.nom*that.denom;
+           BigInteger rightFrac = that.nom*this.denom;
+            return leftFrac.CompareTo(rightFrac);
+        }
+
     }
 }
    

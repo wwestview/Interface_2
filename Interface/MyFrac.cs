@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
-
 namespace Interface
 {
-    public class MyFrac : IMyNumber<MyFrac>
+    public class MyFrac : IMyNumber<MyFrac>, IComparable<MyFrac>
     {
         BigInteger nom, denom;
         public MyFrac(MyFrac f)
@@ -50,21 +49,18 @@ namespace Interface
         {
          return $"{this.nom.ToString()}/{this.denom.ToString()}";
         }
-        // You may think that this is a duplication of code, and I agree, but for the user,
-        // it is a simplification of the use of methods.
         /*
         static public MyFrac operator +(MyFrac f1, MyFrac f2) { return f1.Add(f2); }
         static public MyFrac operator -(MyFrac f1, MyFrac f2) { return f1.Subtract(f2); }
         static public MyFrac operator *(MyFrac f1, MyFrac f2) { return f1.Multiply(f2); }
         static public MyFrac operator /(MyFrac f1, MyFrac f2) { return f1.Divide(f2); }
         */
-        public int CompareTo(MyFrac that)
+        public int CompareTo(MyFrac other)
         {
-           BigInteger leftFrac = this.nom*that.denom;
-           BigInteger rightFrac = that.nom*this.denom;
+           BigInteger leftFrac = this.nom*other.denom;
+           BigInteger rightFrac = other.nom*this.denom;
             return leftFrac.CompareTo(rightFrac);
         }
-
     }
 }
    

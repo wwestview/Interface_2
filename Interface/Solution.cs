@@ -6,7 +6,6 @@ public class Solution
     static void testAPlusBSquare<T>(T a, T b) where T : IMyNumber<T>
     {
         Console.WriteLine("=== Starting testing (a+b)^2=a^2+2ab+b^2 with a = " + a + ", b = " + b + " ===");
-        
         T aPlusB = a.Add(b);
         Console.WriteLine("a = " + a);
         Console.WriteLine("b = " + b);
@@ -14,7 +13,7 @@ public class Solution
         Console.WriteLine("(a+b)^2 = " + aPlusB.Multiply(aPlusB));
         Console.WriteLine(" = = = ");
         T curr = a.Multiply(a);
-        Console.WriteLine("a^2 = " + curr);
+        Console.WriteLine("a^2 = " + curr);                                                   
         T wholeRightPart = curr;
         curr = a.Multiply(b); // ab
         curr = curr.Add(curr); // ab + ab = 2ab
@@ -44,7 +43,6 @@ public class Solution
     }
     static void Main()
     {
-        
         testAPlusBSquare(new MyFrac(1, 3), new MyFrac(1, 6));
         testAPlusBSquare(new MyComplex(1, 3), new MyComplex(1, 6));
         testSquaresDifference(new MyFrac(1, 3), new MyFrac(1, 6));
@@ -60,9 +58,5 @@ public class Solution
         {
             Console.Write(arr[i].ToString() + " ");
         }
-        MyFrac f = new MyFrac(1,6);
-        MyFrac f2 = new MyFrac(f);
-        MyComplex complex1 = new MyComplex(1, 6);
-        MyComplex complex2 = new MyComplex(complex1);
     }
 }

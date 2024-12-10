@@ -35,12 +35,16 @@ namespace Interface
         }
         public MyComplex Divide(MyComplex that)
         {
-            double a = this.re; double b = this.im;double c = that.re; double d = that.im;
+            double a = this.re;
+            double b = this.im;
+            double c = that.re;
+            double d = that.im;
             double denominator = c * c + d * d;
-            if( denominator == 0) throw new DivideByZeroException();
-            double firstPart = a*c+b*d/denominator;
-            double secondPart = b*c-a*d/denominator;
-            return new MyComplex(firstPart, secondPart);
+            if (denominator == 0)
+                throw new DivideByZeroException();
+            double firstPart = (a * c + b * d) / denominator;
+            double secondPart = (b * c - a * d) / denominator;
+            return new MyComplex(firstPart,secondPart);
         }
         public override string ToString()
         {

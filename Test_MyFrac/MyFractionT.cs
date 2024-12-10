@@ -1,4 +1,5 @@
 ﻿using Interface;
+using System.Reflection;
 namespace Test_MyFrac
 {
     [TestClass]
@@ -63,6 +64,14 @@ namespace Test_MyFrac
             string actual = frac1.Divide(frac2).ToString();
             Assert.AreEqual(expected, actual);
         }
-
+        [TestMethod]
+        public void TestCopy()
+        {
+            MyFrac f1 = new(-3, 4);
+            MyFrac actual = new(f1);
+            string act = actual.ToString();
+            string expected = "-3/4";
+            Assert.AreEqual(expected, act);
+        }
     }
 }
